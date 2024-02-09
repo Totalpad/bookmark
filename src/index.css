@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen(lg) {
+  .bg-hero {
+    width: 2000px;
+    height: 300px;
+    left: 30%;
+
+    @apply absolute top-52 rounded-l-full bg-softBlue;
+  }
+
+  .bg-tabs {
+    width: 2000px;
+
+    height: 300px;
+    right: 60%;
+    @apply absolute top-60 rounded-r-full bg-softBlue;
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.top,
+.middle,
+.bottom {
+  position: absolute;
+  height: 3px;
+  width: 24px;
+  top: 0;
+  left: 0;
+  @apply bg-softBlue;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.middle {
+  transform: translateY(7px);
+}
+.bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  @apply bg-softRed;
+}
+.open .middle {
+  display: none;
+}
+.open .bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  @apply bg-softRed;
+}
